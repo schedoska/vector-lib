@@ -25,11 +25,18 @@ namespace ds2
         const vec<T, N>& operator+=(const vec<T, N>& v);
         const vec<T, N>& operator-=(const vec<T, N>& v);
 
-        template<typename S> vec<T, N> operator*(const S& val) const;
-        template<typename S> vec<T, N> operator/(const S& val) const;
+        template<typename S> 
+        vec<T, N> operator*(const S& val) const;
+        template<typename S> 
+        vec<T, N> operator/(const S& val) const;
+        template<typename S> 
+        const vec<T, N>& operator*=(const S& val);
+        template<typename S> 
+        const vec<T, N>& operator/=(const S& val);
 
-        inline _value length() const;
+        inline _value len() const;
         inline _value dot(const vec<T, N>& v) const;
+        inline vec<T, N>& norm();
         template<typename ... Args> vec(const T& e1, const Args& ... par);
 
     protected:
@@ -89,7 +96,7 @@ namespace ds2
     }
 
     template<typename T, std::size_t N>
-    inline _value vec<T, N>::length() const {
+    inline _value vec<T, N>::len() const {
         _value s = (_value)0.0;
         for(std::size_t i = 0; i < N; ++i) {
             s += std::pow(_data[i], 2);
@@ -145,8 +152,34 @@ namespace ds2
         return o;
     };
 
-    //using vec2f = vec<float, 2>;
+    template<typename T, std::size_t N>
+    template<typename S> 
+    const vec<T, N>& vec<T, N>::operator*=(const S& val) {
+        for(T& t : _data) {
+            t *= val;
+        }
+        return *this;
+    };
 
+    template<typename T, std::size_t N>
+    template<typename S> 
+    const vec<T, N>& vec<T, N>::operator/=(const S& val) {
+        for(T& t : _data) {
+            t /= val;
+        }
+        return *this;
+    };
+
+    template<typename T, std::size_t N>
+    vec<T, N>& vec<T, N>::norm() {
+        (*this) /= len();
+        return *this;
+    }
+
+    /*
+    *   class vec2 - derived from vec, implements features specilized for
+    *   2D vectors only.
+    */
     template<typename T>
     class vec2 : public vec<T, 2> {
     public:
@@ -164,9 +197,11 @@ namespace ds2
     vec2<T>::vec2(const T& e1, const Args& ... arg)
      : vec<T, 2>(e1, arg...), x(this->_data[0]), y(this->_data[1]) {}
 
-
-
-    //template class vec<int, 2>;
+    /* Data types alliases */
+    using vec2f = vec<float, 2>;
+    using vec2i = vec<int, 2>;
+    using vec3f = vec<float, 3>;
+    using vec3i = vec<int, 3>;
 }
 
 template<typename T, std::size_t N>
