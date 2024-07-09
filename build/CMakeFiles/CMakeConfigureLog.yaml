@@ -1,0 +1,99 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/TDM-GCC-64/bin/c++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/3.29.6/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-x9y5zh"
+      binary: "C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-x9y5zh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-x9y5zh'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/WinAVR-20100110/utils/bin/make.exe -f Makefile cmTC_01152/fast
+        C:/WinAVR-20100110/utils/bin/make.exe  -f CMakeFiles/cmTC_01152.dir/build.make CMakeFiles/cmTC_01152.dir/build
+        make.exe[1]: Entering directory `C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-x9y5zh'
+        Building CXX object CMakeFiles/cmTC_01152.dir/CMakeCXXCompilerABI.cpp.obj
+        C:/TDM-GCC-64/bin/c++.exe   -v -o CMakeFiles/cmTC_01152.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
+        /usr/bin/sh: -c: line 3: syntax error: unexpected end of file
+        make.exe[1]: *** [CMakeFiles/cmTC_01152.dir/CMakeCXXCompilerABI.cpp.obj] Error 258
+        make.exe[1]: Leaving directory `C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-x9y5zh'
+        make.exe: *** [cmTC_01152/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working CXX compiler: C:/TDM-GCC-64/bin/c++.exe"
+    directories:
+      source: "C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3"
+      binary: "C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/WinAVR-20100110/utils/bin/make.exe -f Makefile cmTC_522a8/fast
+        C:/WinAVR-20100110/utils/bin/make.exe  -f CMakeFiles/cmTC_522a8.dir/build.make CMakeFiles/cmTC_522a8.dir/build
+        make.exe[1]: Entering directory `C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3'
+        Building CXX object CMakeFiles/cmTC_522a8.dir/testCXXCompiler.cxx.obj
+        C:/TDM-GCC-64/bin/c++.exe    -o CMakeFiles/cmTC_522a8.dir/testCXXCompiler.cxx.obj -c C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3/testCXXCompiler.cxx
+        Linking CXX executable cmTC_522a8.exe
+        "C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_522a8.dir/objects.a
+        C:/TDM-GCC-64/bin/ar.exe qc CMakeFiles/cmTC_522a8.dir/objects.a @CMakeFiles/cmTC_522a8.dir/objects1.rsp
+        C:/TDM-GCC-64/bin/c++.exe -Wl,--whole-archive CMakeFiles/cmTC_522a8.dir/objects.a -Wl,--no-whole-archive -o cmTC_522a8.exe -Wl,--out-implib,libcmTC_522a8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_522a8.dir/linkLibs.rsp
+        make.exe[1]: Leaving directory `C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/build/CMakeFiles/CMakeScratch/TryCompile-plpfp3'
+        
+      exitCode: 0
+...
