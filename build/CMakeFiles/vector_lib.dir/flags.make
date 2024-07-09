@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/vector_lib.dir/includes_CXX.rsp
 
-CXX_FLAGS = -lm -Wall
+CXX_FLAGS = -std=gnu++14 -lm -Wall
 

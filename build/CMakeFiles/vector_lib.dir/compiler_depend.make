@@ -53,6 +53,7 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walking_r
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cctype \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cerrno \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/clocale \
+  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cmath \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstddef \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdint \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdio \
@@ -112,6 +113,7 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walking_r
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/limits.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/locale.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/malloc.h \
+  C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/process.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/pthread.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/pthread_compat.h \
@@ -191,6 +193,7 @@ CMakeFiles/vector_lib.dir/src/mat.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walkin
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cctype \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cerrno \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/clocale \
+  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cmath \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstddef \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdint \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdio \
@@ -250,6 +253,7 @@ CMakeFiles/vector_lib.dir/src/mat.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walkin
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/limits.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/locale.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/malloc.h \
+  C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/process.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/pthread.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/pthread_compat.h \
@@ -312,6 +316,8 @@ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/cxxabi_init_exce
 
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/basic_string.tcc:
 
+C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cmath:
+
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/ext/string_conversions.h:
 
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/char_traits.h:
@@ -329,6 +335,8 @@ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/debug/assertions.h:
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/exception_defines.h:
 
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/stl_function.h:
+
+C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h:
 
 C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdio:
 
