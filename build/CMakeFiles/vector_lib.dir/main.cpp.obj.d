@@ -4,6 +4,7 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/pstl/pstl_config.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/ostream \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/ios \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/iosfwd \
@@ -102,6 +103,10 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/basic_string.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/ext/alloc_traits.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/alloc_traits.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/string_view \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/limits \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/functional_hash.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/string_view.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/ext/string_conversions.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdlib \
  C:/TDM-GCC-64/x86_64-w64-mingw32/include/stdlib.h \
@@ -111,7 +116,6 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/std_abs.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstdio \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cerrno \
- C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/functional_hash.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/basic_string.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/locale_classes.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/system_error \
@@ -138,4 +142,19 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/stl_relops.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cmath \
  C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
- C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/specfun.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/gamma.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/special_function_util.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/bessel_function.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/beta_function.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/ell_integral.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/exp_integral.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/hypergeometric.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/legendre_function.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/poly_hermite.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cassert \
+ C:/TDM-GCC-64/x86_64-w64-mingw32/include/assert.h
