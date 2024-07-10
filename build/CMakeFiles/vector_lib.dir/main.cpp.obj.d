@@ -131,10 +131,11 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/istream \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/istream.tcc \
- C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstddef \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/array \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/utility \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/stl_relops.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cmath \
- C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h
+ C:/TDM-GCC-64/x86_64-w64-mingw32/include/math.h \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h

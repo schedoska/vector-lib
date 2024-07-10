@@ -1,223 +1,147 @@
 #ifndef MAT_HH
-#define MAT_HH 
+#define MAT_HH
 
 #include <cstddef>
 #include <iostream>
 #include <array>
 #include <cmath>
 
-#define DOUBLE_PRECISION
+template<typename T, std::size_t N>
+class vec;
 
 namespace ds2
 {
-    #ifdef DOUBLE_PRECISION
-    using _value = double;
-    #endif
-
-    template<typename T, std::size_t N>
-    class vec{
+    template<typename T, std::size_t H, std::size_t W>
+    class mat{
     public:
-        vec();
-        T& operator[](std::size_t i);
-        const T& operator[](std::size_t i) const;
-        vec<T, N> operator+(const vec<T, N>& v) const;
-        vec<T, N> operator-(const vec<T, N>& v) const;
-        const vec<T, N>& operator+=(const vec<T, N>& v);
-        const vec<T, N>& operator-=(const vec<T, N>& v);
+        mat();
+        T& operator() (std::size_t r, std::size_t c);
+        const T& operator() (std::size_t r, std::size_t c) const;
+        mat<T, H, W> operator+(const mat<T, H, W>& m) const;
+        mat<T, H, W> operator-(const mat<T, H, W>& m) const;
+        const mat<T, H, W>& operator+=(const mat<T, H, W>& m);
+        const mat<T, H, W>& operator-=(const mat<T, H, W>& m);
 
         template<typename S> 
-        vec<T, N> operator*(const S& val) const;
+        mat<T, H, W> operator*(const S& val) const;
         template<typename S> 
-        vec<T, N> operator/(const S& val) const;
-        template<typename S> 
-        const vec<T, N>& operator*=(const S& val);
-        template<typename S> 
-        const vec<T, N>& operator/=(const S& val);
+        mat<T, H, W> operator/(const S& val) const;
 
-        inline _value len() const;
-        inline _value dot(const vec<T, N>& v) const;
-        inline vec<T, N>& norm();
-        template<typename ... Args> vec(const T& e1, const Args& ... par);
+        template<typename _T, std::size_t _N>
+        vec<_T, _N> operator*(const vec<_T, _N>& v) const;
+        
 
-    protected:
-        std::array<T, N> _data;
-
-        void push(std::size_t i);
-        template<typename ... Args> void push(std::size_t i, const T& e1, const Args& ... par);
+    private:
+        std::array<std::array<T, W>, H> _data;
     };
 
-    template<typename T, std::size_t N>
-    vec<T, N>::vec() {
-        _data.fill(0.0);
+    template<typename T, std::size_t H, std::size_t W>
+    mat<T, H, W>::mat() {
+        for(auto& r : _data) r.fill(static_cast<T>(0.0));
     }
 
-    template<typename T, std::size_t N>
-    const T& vec<T, N>::operator[](std::size_t i) const {
-        return _data[i];
+    template<typename T, std::size_t H, std::size_t W>
+    T& mat<T, H, W>::operator() (std::size_t r, std::size_t c) {
+        return _data[r][c];
     }
 
-    template<typename T, std::size_t N>
-    T& vec<T, N>::operator[](std::size_t i) {
-        return _data[i];
+    template<typename T, std::size_t H, std::size_t W>
+    const T& mat<T, H, W>::operator() (std::size_t r, std::size_t c) const {
+        return _data[r][c];
     }
 
-    template<typename T, std::size_t N>
-    vec<T, N> vec<T, N>::operator+(const vec<T, N>& v) const {
-        vec<T, N> out;
-        for(std::size_t i = 0; i < N; ++i) {
-            out._data[i] = _data[i] + v._data[i];
+    template<typename T, std::size_t H, std::size_t W>
+    mat<T, H, W> mat<T, H, W>::operator+(const mat<T, H, W>& m) const {
+        mat<T, H, W> om;
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                om(i,j) = m(i,j) + (*this)(i,j);
+            }
         }
-        return out;
+        return om;
     }
 
-    template<typename T, std::size_t N>
-    vec<T, N> vec<T, N>::operator-(const vec<T, N>& v) const {
-        vec<T, N> out;
-        for(std::size_t i = 0; i < N; ++i) {
-            out._data[i] = _data[i] - v._data[i];
+    template<typename T, std::size_t H, std::size_t W>
+    mat<T, H, W> mat<T, H, W>::operator-(const mat<T, H, W>& m) const {
+        mat<T, H, W> om;
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                om(i,j) = (*this)(i,j) - m(i,j);
+            }
         }
-        return out;
+        return om;
     }
 
-    template<typename T, std::size_t N>
-    const vec<T, N>& vec<T, N>::operator+=(const vec<T, N>& v) {
-        for(std::size_t i = 0; i < N; ++i) {
-            _data[i] += v._data[i];
-        }
-        return *this;
-    }
-
-    template<typename T, std::size_t N>
-    const vec<T, N>& vec<T, N>::operator-=(const vec<T, N>& v) {
-        for(std::size_t i = 0; i < N; ++i) {
-            _data[i] -= v._data[i];
+    template<typename T, std::size_t H, std::size_t W>
+    const mat<T, H, W>& mat<T, H, W>::operator+=(const mat<T, H, W>& m) {
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                (*this)(i,j) += m(i,j);
+            }
         }
         return *this;
     }
 
-    template<typename T, std::size_t N>
-    inline _value vec<T, N>::len() const {
-        _value s = (_value)0.0;
-        for(std::size_t i = 0; i < N; ++i) {
-            s += std::pow(_data[i], 2);
+    template<typename T, std::size_t H, std::size_t W>
+    const mat<T, H, W>& mat<T, H, W>::operator-=(const mat<T, H, W>& m) {
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                (*this)(i,j) -= m(i,j);
+            }
         }
-        return std::sqrt(s);
+        return *this;
     }
 
-    template<typename T, std::size_t N>
-    inline _value vec<T, N>::dot(const vec<T, N>& v) const {
-        _value s = (_value)0.0;
-        for(std::size_t i = 0; i < N; ++i) {
-            s += _data[i] * v._data[i];
-        }
-        return s;
-    }
-
-    template<typename T, std::size_t N>
-    template<typename ... Args> 
-    vec<T, N>::vec(const T& e1, const Args& ... arg) {
-        push(0, e1, arg...);
-    }
-
-    template<typename T, std::size_t N>
-    template<typename ... Args> 
-    void vec<T, N>::push(std::size_t i, const T& e1, const Args& ... par) {
-        //std::cout << i << " --: " << e1 << "\n";
-        _data[i] = e1;
-        push(++i, par...);
-    }
-
-    template<typename T, std::size_t N>
-    void vec<T, N>::push(std::size_t i) {
-        return; 
-    }
-
-    template<typename T, std::size_t N>
+    template<typename T, std::size_t H, std::size_t W>
     template<typename S> 
-    vec<T, N> vec<T, N>::operator*(const S& val) const {
-        vec<T, N> o = *this;
-        for(T& t : o._data) {
-            t *= val;
+    mat<T, H, W> mat<T, H, W>::operator*(const S& val) const {
+        mat<T, H, W> m = *this;
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                m(i,j) *= val;
+            }
         }
-        return o;
+        return m;
     };
 
-    template<typename T, std::size_t N>
+    template<typename T, std::size_t H, std::size_t W>
     template<typename S> 
-    vec<T, N> vec<T, N>::operator/(const S& val) const {
-        vec<T, N> o = *this;
-        for(T& t : o._data) {
-            t /= val;
+    mat<T, H, W> mat<T, H, W>::operator/(const S& val) const {
+        mat<T, H, W> m = *this;
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                m(i,j) /= val;
+            }
         }
-        return o;
+        return m;
     };
 
-    template<typename T, std::size_t N>
-    template<typename S> 
-    const vec<T, N>& vec<T, N>::operator*=(const S& val) {
-        for(T& t : _data) {
-            t *= val;
+    template<typename T, std::size_t H, std::size_t W>
+    template<typename _T, std::size_t _N>
+    vec<_T, _N> mat<T, H, W>::operator*(const vec<_T, _N>& v) const {
+        static_assert(W == _N, "Matrix width does not equal to vector length");
+        vec<_T, _N> r_v;
+        for(std::size_t i = 0; i < H; i++){
+            for(std::size_t j = 0; j < W; j++){
+                r_v(i) += (*this)(i,j) * v(i);
+            }
         }
-        return *this;
-    };
-
-    template<typename T, std::size_t N>
-    template<typename S> 
-    const vec<T, N>& vec<T, N>::operator/=(const S& val) {
-        for(T& t : _data) {
-            t /= val;
-        }
-        return *this;
-    };
-
-    template<typename T, std::size_t N>
-    vec<T, N>& vec<T, N>::norm() {
-        (*this) /= len();
-        return *this;
+        return r_v;
     }
-
-    /*
-    *   class vec2 - derived from vec, implements features specilized for
-    *   2D vectors only.
-    */
-    template<typename T>
-    class vec2 : public vec<T, 2> {
-    public:
-        vec2();
-        template<typename ... Args> vec2(const T& e1, const Args& ... par);
-        T& x, y; 
-    };
-
-    template<typename T> 
-    vec2<T>::vec2()
-     : x(this->_data[0]), y(this->_data[1]) {}
-
-    template<typename T>
-    template<typename ... Args> 
-    vec2<T>::vec2(const T& e1, const Args& ... arg)
-     : vec<T, 2>(e1, arg...), x(this->_data[0]), y(this->_data[1]) {}
-
-    /* Data types alliases */
-    using vec2f = vec<float, 2>;
-    using vec2i = vec<int, 2>;
-    using vec3f = vec<float, 3>;
-    using vec3i = vec<int, 3>;
 }
 
-template<typename T, std::size_t N>
-std::ostream& operator <<(std::ostream& out, const ds2::vec<T, N>& v) {
+template<typename T, std::size_t H, std::size_t W>
+std::ostream& operator <<(std::ostream& out, const ds2::mat<T, H, W>& m) {
     std::cout << "[";
-    for(std::size_t i = 0; i < N; ++i) {
-        std::cout << v[i];
-        if(i < N - 1) std::cout << ", ";
+    for(std::size_t i = 0; i < H; i++){
+        for(std::size_t j = 0; j < W; j++){
+            std::cout << m(i,j);
+            if(j < W - 1) std::cout << ", ";
+        }
+        if(i < H - 1) std::cout << "; ";
     }
     std::cout << "]";
     return out;
 };
-
-
-
-
-
 
 #endif
