@@ -11,7 +11,7 @@
 template<typename T, std::size_t N>
 class vec;
 
-namespace ds2
+namespace vl
 {
     template<typename T, std::size_t H, std::size_t W>
     class mat{
@@ -38,9 +38,6 @@ namespace ds2
 
         template<typename _T, std::size_t _N>
         vec<_T, _N> operator*(const vec<_T, _N>& v) const;
-
-        // TO DO:
-        mat<T, H, W>& inv() { return *this; }
 
     protected:
         std::array<std::array<T, W>, H> _data;
@@ -167,47 +164,10 @@ namespace ds2
         }
         return r_v;
     }
-
-    /*
-    *   class mat2 - derived from mat, implements features specilized for
-    *   2x2 matices only.
-    */
-    template<typename T>
-    class mat2 : public mat<T, 2, 2> {
-    public:
-        mat2();
-        mat2<T>& inv();
-        inline T det();
-
-        template<typename _T, std::size_t _H, std::size_t _W>
-        mat<T, H, W> operator*(const mat<_T, _H, _W>& m) const;
-
-        
-    };
-
-    template<typename T>
-    mat2<T>::mat2() : mat<T, 2, 2>() {}
-
-    template<typename T>
-    inline T mat2<T>::det() {
-        return this->_data[0][0] * this->_data[1][1] - 
-               this->_data[0][1] * this->_data[1][0];
-    }
-
-    template<typename T>
-    mat2<T>& mat2<T>::inv() {
-        T d = det();
-        assert((d != static_cast<T>(0.0)) && "Matrix is singular, can not be inverted");
-        std::swap(this->_data[0][0], this->_data[1][1]);
-        this->_data[1][0] *= static_cast<T>(-1.0);
-        this->_data[0][1] *= static_cast<T>(-1.0);
-        *this /= d;
-        return *this;
-    }
 }
 
 template<typename T, std::size_t H, std::size_t W>
-std::ostream& operator <<(std::ostream& out, const ds2::mat<T, H, W>& m) {
+std::ostream& operator <<(std::ostream& out, const vl::mat<T, H, W>& m) {
     std::cout << "[";
     for(std::size_t i = 0; i < H; i++){
         for(std::size_t j = 0; j < W; j++){

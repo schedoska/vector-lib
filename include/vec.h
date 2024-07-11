@@ -5,10 +5,12 @@
 #include <iostream>
 #include <array>
 #include <cmath>
+#include <cassert>
+#include <initializer_list>
 
 #define DOUBLE_PRECISION
 
-namespace ds2
+namespace vl
 {
     #ifdef DOUBLE_PRECISION
     using _value = double;
@@ -18,6 +20,7 @@ namespace ds2
     class vec{
     public:
         vec();
+        vec(const std::initializer_list<T>& l);
         T& operator[](std::size_t i);
         const T& operator[](std::size_t i) const;
         T& operator()(std::size_t i);
@@ -41,6 +44,10 @@ namespace ds2
         inline vec<T, N>& norm();
         template<typename ... Args> vec(const T& e1, const Args& ... par);
 
+        // TESY CODE, REMOVE LATER
+        void soot(float&& kok) {std::cout << "reference taken " << kok;}
+        //void soot(const float&& kok) {std::cout << "rvalue taken " << kok ;}
+
     protected:
         std::array<T, N> _data;
 
@@ -51,6 +58,16 @@ namespace ds2
     template<typename T, std::size_t N>
     vec<T, N>::vec() {
         _data.fill(static_cast<T>(0.0));
+    }
+
+    template<typename T, std::size_t N>
+    vec<T, N>::vec(const std::initializer_list<T>& l) {
+        assert((l.size() <= N) && "Initializaer list is too long");
+        _data.fill(static_cast<T>(0.0));
+        std::size_t i = 0;
+        for (auto it = l.begin(); it != l.end(); ++it, ++i) {
+            _data[i] = *it;
+        }
     }
 
     template<typename T, std::size_t N>
@@ -187,37 +204,10 @@ namespace ds2
         (*this) /= len();
         return *this;
     }
-
-    /*
-    *   class vec2 - derived from vec, implements features specilized for
-    *   2D vectors only.
-    */
-    template<typename T>
-    class vec2 : public vec<T, 2> {
-    public:
-        vec2();
-        template<typename ... Args> vec2(const T& e1, const Args& ... par);
-        T& x, y; 
-    };
-
-    template<typename T> 
-    vec2<T>::vec2()
-     : x(this->_data[0]), y(this->_data[1]) {}
-
-    template<typename T>
-    template<typename ... Args> 
-    vec2<T>::vec2(const T& e1, const Args& ... arg)
-     : vec<T, 2>(e1, arg...), x(this->_data[0]), y(this->_data[1]) {}
-
-    /* Data types alliases */
-    using vec2f = vec<float, 2>;
-    using vec2i = vec<int, 2>;
-    using vec3f = vec<float, 3>;
-    using vec3i = vec<int, 3>;
 }
 
 template<typename T, std::size_t N>
-std::ostream& operator <<(std::ostream& out, const ds2::vec<T, N>& v) {
+std::ostream& operator <<(std::ostream& out, const vl::vec<T, N>& v) {
     std::cout << "[";
     for(std::size_t i = 0; i < N; ++i) {
         std::cout << v[i];

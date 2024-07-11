@@ -159,7 +159,9 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walking_r
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wchar.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h \
-  C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec.h
+  C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat22.h \
+  C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec.h \
+  C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec2.h
 
 CMakeFiles/vector_lib.dir/src/mat.cpp.obj: C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/src/mat.cpp \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/limits.h \
@@ -637,6 +639,10 @@ C:/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h:
 
 C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h:
 
+C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat22.h:
+
 C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec.h:
+
+C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec2.h:
 
 C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/src/mat.cpp:

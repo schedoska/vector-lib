@@ -135,6 +135,7 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/istream \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/istream.tcc \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec2.h \
  C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/vec.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cstddef \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/array \
@@ -155,6 +156,7 @@ CMakeFiles/vector_lib.dir/main.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/poly_hermite.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/poly_laguerre.tcc \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/tr1/riemann_zeta.tcc \
- C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/cassert \
- C:/TDM-GCC-64/x86_64-w64-mingw32/include/assert.h
+ C:/TDM-GCC-64/x86_64-w64-mingw32/include/assert.h \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat22.h \
+ C:/Users/chedo/OneDrive/Pulpit/Walking_robot_simulation/vector-lib/include/mat.h
